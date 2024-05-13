@@ -108,6 +108,7 @@ class SimpleMailbox:
         res = requests.get(
             f"{settings.proxy_url}/api/mails?limit=20&offset={start - 1}", headers={
                 "Authorization": f"Bearer {self.password}",
+              # "x-custom-auth": "<你的网站密码>", # 如果启用了自定义密码
                 "Content-Type": "application/json"
             }
         )
